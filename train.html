@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>训练场</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+    <div id="train" ondragstart="return false" onselectstart="return false" onmousedown="miss()">
+        <img src="./generalimgs/returnmenu.png" alt="" id="returnmenu" class="returnmenu" style="cursor: pointer;"
+            onclick='window.location.href="index.html"'>
+        <div>
+            <img id="trainstart" style="cursor: pointer;" src="./generalimgs/start.png" alt="" onclick="start()">
+        </div>
+        <div class="probox">
+            <table style="margin-bottom:7px;margin-top:7px;margin-left: 10px;" id="trainprobox">
+            </table>
+        </div>
+        <div id="score"></div>
+    </div>
+
+</body>
+<script>
+    var count = 0;
+    var timecount = 0
+    var leftcount = 5;
+    var difficultlevel = 1000
+    var istrainover = false
+    var score = 0
+    window.onload = window.onresize = function () {
+        document.body.style.zoom = 0.8
+    };
+    var str = "<tr class='pro'><td><div>提示：</div></td></tr>" +
+        "<tr class='pro'><td><div>1.屏幕中会随机出现只因。</div></td></tr>" +
+        "<tr class='pro'><td><div>2.成功命中只因剩余机会加一。</div></td></tr>" +
+        "<tr class='pro'><td><div>3.未成功命中只因剩余机会减一。</div></td></tr>" +
+        "<tr class='pro'><td><div>4.剩余机会为0时结束。</div></td></tr>" +
+        "<tr class='pro'><td><div>5.只因的速度会慢慢加快。</div></td></tr>" +
+        "<tr class='pro'><td><div>6.只因将在1秒后消失，在消失前点击它吧！</div></td></tr>";
+    function newprobox() {
+        var trainprobox = document.getElementById('trainprobox');
+        trainprobox.innerHTML = "<tr class='pro'><td><div>提示：</div></td></tr>" +
+            "<tr class='pro'><td><div>1.屏幕中会随机出现只因。</div></td></tr>" +
+            "<tr class='pro'><td><div>2.成功命中只因剩余机会加一。</div></td></tr>" +
+            "<tr class='pro'><td><div>3.未成功命中只因剩余机会减一。</div></td></tr>" +
+            "<tr class='pro'><td><div>4.剩余机会为0时结束。</div></td></tr>" +
+            "<tr class='pro'><td><div>5.只因的速度会慢慢加快。</div></td></tr>" +
+            "<tr class='pro'><td><div>6.只因将在1秒后消失，在消失前点击它吧！</div></td></tr>";
+    }
+
+    newprobox()
+    function randtrain() {
+        if (!istrainover) {
+            count += 1
+            var train = document.getElementById('train')
+            train.innerHTML += "<div class='random' onmousedown='del(id)' id='train" + String(count) + "'><img src='./generalimgs/train.gif' width=120 height=240 /></div>"
+            var obj = document.getElementById('train' + String(count))
+            obj.style.left = Math.random() * 1600 + 10 + 'px';
+            obj.style.top = Math.random() * 640 + 100 + 'px';
+            calltimeout('train' + String(count))
+            setTimeout(() => {
+                randtrain()
+            }, difficultlevel);
+            if (difficultlevel > 250) {
+                difficultlevel -= 10
+            } else {
+                difficultlevel = 250
+            }
+        }
+    }
+    function calltimeout(outid) {
+        setTimeout(() => {
+            timeout(outid)
+        }, 1000);
+    }
+    function trainproboxupdate() {
+        if (!istrainover) {
+            var scorebox = document.getElementById('score')
+            trainprobox.innerHTML = "<tr class='pro'><td><div>剩余机会" + String(leftcount < 0 ? 0 : leftcount) + "当前分数：" + String(score) + "</div></td></tr>" + str;
+            scorebox.innerHTML = "<div>剩余机会" + String(leftcount < 0 ? 0 : leftcount) + "当前分数：" + String(score) + "</div>"
+        }
+    }
+    if (!istrainover) {
+        setInterval("trainproboxupdate()", "100");
+    }
+    function timeout(outid) {
+        var del = document.getElementById(outid)
+        if (del) {
+            del.remove();
+            miss()
+        }
+    }
+    function del(id) {
+        if (!istrainover) {
+            leftcount += 2
+            score += 1
+            document.getElementById(id).remove();
+        }
+    }
+    function miss() {
+        if (!istrainover) {
+            if (leftcount < 0) {//结束
+                var startbtn = document.getElementById('trainstart')
+                startbtn.style.display = 'block'
+                istrainover = true
+                var trainprobox = document.getElementById('trainprobox')
+                var scorebox = document.getElementById('score')
+                trainprobox.innerHTML = "<tr class='pro'><td><div>总成绩：命中" + String(score) + "次</div></td></tr>" + trainprobox.innerHTML
+                scorebox.innerHTML = "<div>总成绩：命中" + String(score) + "次</div>"
+            }
+            leftcount -= 1;
+        }
+
+    }
+    function start() {
+        var startbtn = document.getElementById('trainstart')
+        count = 0;
+        timecount = 0
+        leftcount = 5;
+        difficultlevel = 1000
+        istrainover = false
+        score = 0
+        startbtn.style.display = 'none'
+        randtrain()
+    }
+</script>
+
+</html>

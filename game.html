@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>游戏</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<script src="./game.js"></script>
+
+
+<body>
+    <div id="main" ondragstart="return false" onselectstart="return false">
+        <div id="p1andp2">
+
+        </div>
+
+        <img src="./generalimgs/returnmenu.png" alt="" id="returnmenu" class="returnmenu" style="cursor: pointer;"
+            onclick='window.location.href="index.html"'>
+        <div id="btn">
+            <img src="./generalimgs/start.png" alt="" id="shotbutton" onmousedown="test2()" style="pointer-events:all;">
+            <!--不能用onclick，onclick是鼠标按下再弹起才触发，onmousedown是按下就触发，不会造成反应时间的延迟-->
+        </div>
+
+        <!-- <div class="hp" id="youhp"> 
+            <img src="./hp6.png" alt="" id='imgi'>
+        </div>
+        <div class="hp" id="ihp">
+            <img src="./hp6.png" alt="">
+        </div>-->
+        <div id="bulletcount1">
+            <!-- <img src="./generalimgs/reload1.gif" alt=""> -->
+        </div>
+        <div id="bulletcount2">
+            <!-- <img src="./generalimgs/reload1.gif" alt=""> -->
+        </div>
+        <div class="probox">
+            <table style="margin-bottom:7px;margin-top:7px;margin-left: 10px;" id="probox">
+            </table>
+        </div>
+        <div class="probox2" id="pro2">
+            <table style="margin-bottom:7px;margin-top:7px;margin-left: 10px;" id="probox2">
+            </table>
+        </div>
+        <div id="shotalert">请等待射击按钮亮起后射击</div>
+    </div>
+</body>
+<script>
+    document.getElementById('main').style.backgroundImage = "url('./p" + String(mode) + "imgs/bgimg.jpg')";//背景
+    document.getElementById('p1andp2').innerHTML = "<img src='./p" + String(mode) + "imgs/p1stand.gif' class='p" + String(mode) + "gamep1' id='p" + String(mode) + "p1'>" +
+        "<img src='./p" + String(mode) + "imgs/p2stand.gif'  class='p" + String(mode) + "gamep2' id='p" + String(mode) + "p2'> "//人物
+    if (mode == 1) {
+        document.title = "单人游戏"
+        document.getElementById('bulletcount1').innerHTML = "<img src='./generalimgs/reload.gif'id='p" + String(mode) + "p1bulletcount'>"
+        document.getElementById('bulletcount2').innerHTML = "<img src='./generalimgs/reload.gif'id='p" + String(mode) + "p2bulletcount'>"
+        document.getElementById('pro2').style.display = 'none'
+        document.getElementById('probox').innerHTML = "<tr class='pro'><td><div>提示：</div></td></tr>" +
+            "<tr class='pro'><td><div>1.等待射击键亮起后按下空格或点击按钮进行射击</div></td></tr>" +
+            "<tr class='pro'><td><div>2.其中一方子弹射击完后游戏结束</div></td></tr>";
+    } else {
+        document.title = "双人游戏"
+        document.getElementById('bulletcount1').innerHTML = "<img src='./generalimgs/bullet6.gif'id='p" + String(mode) + "p1bulletcount'>"
+        document.getElementById('bulletcount2').innerHTML = "<img src='./generalimgs/bullet6.gif' id='p" + String(mode) + "p2bulletcount'>"
+        document.getElementById('probox').innerHTML = "<tr class='pro'><td><div>提示：</div></td></tr>" +
+            "<tr class='pro'><td><div>1.等待射击键亮起后按下空格或点击按钮进行射击</div></td></tr>" +
+            "<tr class='pro'><td><div>2.其中一方子弹射击完后游戏结束</div></td></tr>";
+        document.getElementById('probox2').innerHTML = "<tr class='pro'><td><div>提示：</div></td></tr>" +
+            "<tr class='pro'><td><div>1.等待射击键亮起后按下↑键进行射击</div></td></tr>" +
+            "<tr class='pro'><td><div>2.其中一方子弹射击完后游戏结束</div></td></tr>";
+    }
+</script>
+
+
+</html>

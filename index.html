@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>主页</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<script src="./game.js"></script>
+
+<body>
+    <div id="mainpage">
+        <div id="leftframe" class="leftframe">
+
+            <div class="title" ondragstart="return false">
+                <img src="./generalimgs/titlebg.png" alt="" onclick="alert('')">
+                <div class="titletext">单 人 游 戏</div>
+            </div>
+            <div id="leftframe1">
+                <div class="btn" onclick='window.location.href="game.html?gamep=1&level=1"'>
+                    <div class="difficult">简 单</div>
+                    <img src="./generalimgs/qqq.png" alt="">
+                </div>
+                <div class="btn" onclick='window.location.href="game.html?gamep=1&level=2"'>
+                    <div class="difficult">中 等</div>
+                    <img src="./generalimgs/qqq.png" alt="">
+                </div>
+                <div class="btn" onclick='window.location.href="game.html?gamep=1&level=3"'>
+                    <div class="difficult">困 难</div>
+                    <img src="./generalimgs/qqq.png" alt="">
+                </div>
+            </div>
+        </div>
+        <div id="centerframe" class="leftframe">
+            <div class="title">
+                <img src="./generalimgs/titlebg.png" alt="">
+                <div class="titletext">双 人 游 戏</div>
+            </div>
+            <div id="leftframe1">
+                <div class="btn" onclick='window.location.href="game.html?gamep=2&level=1"'>
+                    <div class="difficult">开始游戏</div>
+                    <img src="./generalimgs/qqq.png" alt="">
+                </div>
+            </div>
+        </div>
+        <div id="rightup" class="leftframe">
+            <div class="title" onclick='window.location.href="train.html"'>
+                <img src="./generalimgs/titlebg.png" alt="">
+                <div class="titletext">训 练 场</div>
+            </div>
+        </div>
+        <div id="rightdown" class="leftframe">
+            <div class="title" onclick='window.location.href="set.html"'>
+                <img src="./generalimgs/titlebg.png" alt="">
+                <div class="titletext">设 置</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+
+</html>

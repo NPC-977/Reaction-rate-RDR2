@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>设置</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div id="setpage" ondragstart="return false" onselectstart="return false">
+        <img src="./generalimgs/returnmenu.png" alt="" id="returnmenu" class="returnmenu" style="cursor: pointer;"
+            onclick='window.location.href="index.html"'>
+        <div class="title" id="llll">
+            <div class="titlels" id="control" onclick="titledark(id)">控制</div>
+            <div class="titlels" id="display" onclick="titledark(id)">显示</div>
+            <div class="titlels" id="audio" onclick="titledark(id)">音频</div>
+            <div class="titlels" id="graphics" onclick="titledark(id)">图形</div>
+            <div class="titlels" id="view" onclick="titledark(id)">视角</div>
+            <div class="titlels" id="routine" onclick="titledark(id)">常规</div>
+        </div>
+        <table id="optionls">
+
+            <!-- <div class="setlist" id="setls1" onmouseover="show(id)" onmouseout="hide(id)">
+                <div class="setoption">P1按键</div>
+                <img src="./generalimgs/option.png" alt="" id="setls1img">
+                <div class="optionright">空格</div>
+            </div>
+            <div class="setlist" id="setls2" onmouseover="show(id)" onmouseout="hide(id)">
+                <div class="setoption">P2按键</div>
+                <img src="./generalimgs/option.png" alt="" id="setls2img">
+                <div class="optionright">↑</div>
+            </div>
+            <div class="setlist" id="display1" onmouseover="show(id)" onmouseout="hide(id)">
+                <div class="setoption">P1按键</div>
+                <img src="./generalimgs/option.png" alt="" id="display1img">
+                <div class="optionright">空格</div>
+            </div>
+            <div class="setlist" id="display2" onmouseover="show(id)" onmouseout="hide(id)">
+                <div class="setoption">P2按键</div>
+                <img src="./generalimgs/option.png" alt="" id="display2img">
+                <div class="optionright">↑</div>
+            </div>
+            <div class="setlist" id="audio1" onmouseover="show(id)" onmouseout="hide(id)">
+                <div class="setoption">P1按键</div>
+                <img src="./generalimgs/option.png" alt="" id="audio1img">
+                <div class="optionright">空格</div>
+            </div>
+            <div class="setlist" id="audio2" onmouseover="show(id)" onmouseout="hide(id)">
+                <div class="setoption">P2按键</div>
+                <img src="./generalimgs/option.png" alt="" id="audio2img">
+                <div class="optionright">↑</div>
+            </div>
+            <div class="setlist" id="graphics1" onmouseover="show(id)" onmouseout="hide(id)">
+                <div class="setoption">P1按键</div>
+                <img src="./generalimgs/option.png" alt="" id="graphics1img">
+                <div class="optionright">空格</div>
+            </div>
+            <div class="setlist" id="graphics2" onmouseover="show(id)" onmouseout="hide(id)">
+                <div class="setoption">P2按键</div>
+                <img src="./generalimgs/option.png" alt="" id="graphics2img">
+                <div class="optionright">↑</div>
+            </div>
+            <div class="setlist" id="view1" onmouseover="show(id)" onmouseout="hide(id)">
+                <div class="setoption">P1按键</div>
+                <img src="./generalimgs/option.png" alt="" id="view1img">
+                <div class="optionright">空格</div>
+            </div>
+            <div class="setlist" id="view2" onmouseover="show(id)" onmouseout="hide(id)">
+                <div class="setoption">P2按键</div>
+                <img src="./generalimgs/option.png" alt="" id="view2img">
+                <div class="optionright">↑</div>
+            </div>
+            <div class="setlist" id="routine1" onmouseover="show(id)" onmouseout="hide(id)">
+                <div class="setoption">P1按键</div>
+                <img src="./generalimgs/option.png" alt="" id="routine1img">
+                <div class="optionright">空格</div>
+            </div>
+            <div class="setlist" id="routine2" onmouseover="show(id)" onmouseout="hide(id)">
+                <div class="setoption">P2按键</div>
+                <img src="./generalimgs/option.png" alt="" id="routine2img">
+                <div class="optionright">↑</div>
+            </div> -->
+        </table>
+    </div>
+</body>
+<script>
+    window.onload = window.onresize = function () {
+        document.body.style.zoom = 0.8
+    };
+    function show(id) {
+        document.getElementById(id + "img").style.display = "block"
+    }
+    function hide(id) {
+        document.getElementById(id + "img").style.display = "none"
+    }
+    function titledark(id) {
+
+        var titlels = document.getElementsByClassName('titlels')
+        for (var i = 0; i < titlels.length; i++) {
+            if (titlels[i].id == id) {
+                document.getElementById(id).style.opacity = "0.5"
+                document.getElementById(id + 'ls').style.display = "block"
+            } else {
+                document.getElementById(titlels[i].id).style.opacity = "1"
+                document.getElementById(titlels[i].id + 'ls').style.display = "none"
+            }
+
+        }
+    }
+    var controlls = ['P1按键', '空格', 'P2按键', '↑', '鼠标模式', '原始输入', '反转鼠标视角', '关闭', '自动切换击针', '关闭']
+    var displayls = ['色盲模式', '关闭', '击杀效果', '关闭', '状态图标', '关闭', '弹药', '关闭', '字幕', '关闭']
+    var audiols = ['启用语音聊天', '关闭', '麦克风', '关闭', '输出', '关闭', '对话平衡', '关闭', '延迟', '关闭']
+    var graphicsls = ['垂直同步', '关闭', 'NVIDIA Reflex 低延迟', '关闭', '三重缓冲', '关闭', '失焦时暂停游戏', '关闭', '约束鼠标指针', '关闭']
+    var viewls = ['自动水平视角', '关闭', '动态击杀镜头', '关闭', '第三人称视角', '关闭', '头部摆动', '关闭', '视角辅助', '关闭']
+    var routinels = ['自动保存', '关闭', '温度', '关闭', '重量', '关闭', '时钟', '关闭', '辅助瞄准', '关闭']
+    var objlist = [controlls, displayls, audiols, graphicsls, viewls, routinels]
+    var strlist = ['controlls', 'displayls', 'audiols', 'graphicsls', 'viewls', 'routinels']
+    function newoptionls() {
+        var obj = document.getElementById('optionls')
+        for (var i = 0; i < objlist.length; i++) {
+            obj.innerHTML += '<div id="' + strlist[i] + '"></div>'
+            var obj2 = document.getElementById(strlist[i])
+            for (var j = 0; j < objlist[i].length; j += 2) {
+                obj2.innerHTML += '<div class="setlist" id="' + String(strlist[i]) + String(j / 2) + '" onmouseover="show(id)" onmouseout="hide(id)">   ' +
+                    '<div class="setoption">' + objlist[i][j] + '</div>' +
+                    '<img src="./generalimgs/option.png" alt="" id="' + String(strlist[i]) + String(j / 2) + 'img">' +
+                    '<div class="optionright">' + objlist[i][j + 1] + '</div></div>';
+            }
+        }
+    }
+    newoptionls()
+    titledark("control")
+</script>
+
+</html>

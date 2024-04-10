@@ -1,0 +1,428 @@
+#main {
+    position: relative;
+    width: 1920px;
+    height: 1080px;
+    background-image: url('./p1imgs/bgimg.jpg');
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+#returnmenu {
+    position: absolute;
+    width: 120px;
+    height: 86px;
+    left: 30px;
+    top: 50px;
+}
+
+#returnmenu:hover {
+    width: 140px;
+    height: 100px;
+}
+
+#stop {
+    position: absolute;
+    width: 1920px;
+    height: 1080px;
+}
+
+#shotbutton {
+    position: absolute;
+    width: 256px;
+    height: 111px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    top: 75%;
+    border-radius: 25px;
+}
+
+#shotbutton:hover {
+    width: 280px;
+    height: 122px;
+}
+
+.probox {
+    position: absolute;
+    left: 2%;
+    bottom: 5%;
+    width: 480px;
+    height: 270px;
+    background-color: hsla(0, 0%, 0%, 0.6);
+    color: white;
+    overflow: auto;
+    white-space: normal;
+    word-wrap: break-word;
+    word-break: break-all;
+    border-radius: 25px;
+
+}
+
+.scrollbar {
+    width: 30px;
+    height: 300px;
+    margin: 0 auto;
+    padding-right: 50px;
+}
+
+.probox::-webkit-scrollbar,
+.probox2::-webkit-scrollbar {
+    /*滚动条整体样式*/
+    position: relative;
+    width: 10px;
+    /*高宽分别对应横竖滚动条的尺寸*/
+    height: 1px;
+    padding-right: 50px;
+}
+
+.probox::-webkit-scrollbar-thumb,
+.probox2::-webkit-scrollbar-thumb {
+    /*滚动条里面小方块*/
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.2);
+    background: #ffffffcb;
+}
+
+.probox::-webkit-scrollbar-track,
+.probox2::-webkit-scrollbar-track {
+    /*滚动条里面轨道*/
+    height: 50px;
+    -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    background: #6e6e6ebe;
+}
+
+.probox2 {
+    position: absolute;
+    right: 2%;
+    bottom: 5%;
+    width: 480px;
+    height: 270px;
+    background-color: hsla(0, 0%, 0%, 0.356);
+    color: white;
+    overflow: auto;
+    white-space: normal;
+    word-wrap: break-word;
+    word-break: break-all;
+    border-radius: 25px;
+}
+
+
+.p1gamep2 {
+    top: 380px;
+
+    position: absolute;
+    left: 750px;
+}
+
+#shotalert {
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    bottom: 120px;
+    font-size: 30px;
+    color: white;
+    text-align: center;
+}
+
+#p1p1bulletcount {
+    position: absolute;
+    left: 37%;
+    bottom: 16%;
+    width: 60px;
+    height: 60px;
+}
+
+#p2p1 {
+    position: absolute;
+    top: 15%;
+    left: 5%;
+}
+
+#p2p1bulletcount {
+    position: absolute;
+    left: 37%;
+    bottom: 16%;
+    width: 60px;
+    height: 60px;
+}
+
+#p2p2 {
+    position: absolute;
+    top: 15%;
+    right: 5%;
+}
+
+#p2p2bulletcount {
+    position: absolute;
+    right: 37%;
+    bottom: 16%;
+    width: 60px;
+    height: 60px;
+}
+
+#p1p2bulletcount {
+    display: none;
+}
+
+/* mainpage */
+#mainpage {
+    position: relative;
+    width: 1920px;
+    height: 1080px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background-image: url(./generalimgs/mainpagebg.png);
+}
+
+.leftframe {
+    position: absolute;
+    left: 91px;
+    top: 211px;
+    width: 552px;
+    height: 658px;
+    background-image: url(./generalimgs/bigframe.png);
+    /*设置不可选择*/
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+.leftframe #leftframe1 {
+    /* display: none; */
+    position: absolute;
+    opacity: 0;
+    transition: 1s;
+    width: 552px;
+    height: 658px;
+}
+
+.leftframe #leftframe1:hover {
+    opacity: 1;
+    transition: 0.6s;
+}
+
+
+
+
+/* .leftframe .btnbg {
+    position: absolute;
+} */
+
+.leftframe .btn {
+    position: relative;
+    top: 30px;
+    margin-top: 50px;
+    /* left: 91px; */
+    text-align: center;
+}
+
+
+
+.leftframe .btn .difficult {
+    cursor: pointer;
+    left: 0;
+    right: 0;
+    top: 10px;
+    font-family: "方正舒体";
+    font-size: 72px;
+    color: black;
+    position: absolute;
+}
+
+.leftframe .btn .difficult:hover {
+    color: white;
+}
+
+
+.leftframe .title {
+    bottom: 0px;
+    position: absolute;
+    text-align: center;
+    color: black;
+    font-family: "方正舒体";
+    font-size: 72px;
+}
+
+.leftframe .title .titletext {
+    left: 0;
+    right: 0;
+    position: absolute;
+    top: 5px;
+}
+
+/*
+#leftframe .btnbg {
+    left: 132px;
+    top: 10px;
+    position: relative;
+} */
+#centerframe {
+    position: absolute;
+    left: 685px;
+    top: 211px;
+    width: 552px;
+    height: 658px;
+    background-image: url(./generalimgs/bigframe.png);
+}
+
+#centerframe #leftframe1 .btn {
+    top: 341.25px;
+}
+
+#rightup {
+    width: 552px;
+    height: 307px;
+    position: absolute;
+    left: 1278px;
+    top: 211px;
+    background-image: url(./generalimgs/smallframe.png);
+    background-repeat: no-repeat;
+}
+
+#rightup .title,
+#rightdown .title {
+    cursor: pointer;
+}
+
+#rightup .title:hover,
+#rightdown .title:hover {
+    color: white;
+}
+
+
+
+#rightdown {
+    width: 552px;
+    height: 307px;
+    position: absolute;
+    left: 1278px;
+    top: 562px;
+    background-image: url(./generalimgs/smallframe.png);
+    background-repeat: no-repeat;
+}
+
+#train {
+    position: relative;
+    width: 1920px;
+    height: 1080px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background-image: url(./p1imgs/bgimg.jpg);
+}
+
+#train #score {
+    text-align: center;
+    left: 0;
+    right: 0;
+    margin: auto;
+    bottom: 30px;
+    position: absolute;
+    font-size: 30px;
+    color: white;
+}
+
+.random {
+    position: absolute;
+}
+
+#trainstart {
+    position: absolute;
+    width: 256px;
+    height: 111px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    bottom: 90px;
+    border-radius: 25px;
+}
+
+#setpage {
+    position: relative;
+    width: 1920px;
+    height: 1080px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background-image: url(./generalimgs/setbg.png);
+}
+
+#setpage .title {
+    top: 20px;
+    position: relative;
+    font-family: "方正舒体";
+    font-size: 72px;
+    color: white;
+    left: 378px;
+    right: 0;
+    margin: auto;
+    background-color: aliceblue;
+}
+
+#setpage .title .titlels {
+    cursor: pointer;
+    list-style-type: none;
+    padding-left: 50px;
+    position: relative;
+    float: left;
+}
+
+#optionls {
+    clear: both;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    top: 150px;
+}
+
+#setpage .setlist {
+    width: 984px;
+    height: 64px;
+    clear: both;
+    position: relative;
+    left: 0;
+    right: 0;
+    margin: auto;
+    font-family: "宋体";
+    font-size: 40px;
+    color: white;
+    padding-left: 50px;
+    padding-top: 20px;
+    padding-right: 50px;
+}
+
+#setpage .setlist img {
+    display: none;
+    position: absolute;
+    width: 984px;
+    height: 64px;
+    top: 20px;
+}
+
+#setpage .setlist .setoption {
+    left: 0;
+    right: 0;
+    padding-top: 9px;
+    padding-left: 25px;
+    margin: auto;
+    position: relative;
+    width: 984px;
+    height: 64px;
+    background-image: url(./generalimgs/optionbg.png);
+    border-radius: 15px;
+    background-repeat: no-repeat;
+}
+
+#setpage .setlist .optionright {
+    cursor: pointer;
+    position: absolute;
+    right: 80px;
+    top: 25px;
+}
